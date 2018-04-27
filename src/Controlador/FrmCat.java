@@ -6,6 +6,8 @@
 package Controlador;
 import Negocio.*;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 /**
  *
  * @author JOSIAN
@@ -22,10 +24,20 @@ public class FrmCat extends javax.swing.JDialog {
         initComponents();
         
         Recargar();
+        
+        jtCategorias.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent event) {
+                // do some actions here, for example
+                // print first column value from selected row
+                System.out.println(jtCategorias.getValueAt(jtCategorias.getSelectedRow(), 0).toString());
+            }
+        });
     }
 
     public void Recargar()
     {
+       jtfCategoria.setText("");
         jtCategorias.setModel(new NCategoria().MostrarCategorias());
         jtCategorias.getColumnModel().getColumn(0).setMaxWidth(0);
         jtCategorias.getColumnModel().getColumn(0).setMinWidth(0);
@@ -267,16 +279,25 @@ public class FrmCat extends javax.swing.JDialog {
     }//GEN-LAST:event_btnGuardarActionPerformed
      
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        
+               
         if (jtCategorias.getSelectedRow()==-1) {
                
                JOptionPane.showConfirmDialog(rootPane, "Debe hacer una seleccion para la edicion");
             
         }
+        
+
+       
            else if (new NCategoria().NoRep(jtfCategoria.getText())) {
                
              jtCategorias.getValueAt(jtCategorias.getSelectedRow(),0).toString();
-        JOptionPane.showMessageDialog(rootPane, ""+jtCategorias.getValueAt(jtCategorias.getSelectedRow(),0).toString());
+           //  if (new NCategoria().Modificar(WIDTH, Categoria)) {
+                
+           // }
+               
+               
+               
+               
             
         }
            else   {
