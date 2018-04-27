@@ -238,16 +238,24 @@ public class FrmCat extends javax.swing.JDialog {
             
             JOptionPane.showConfirmDialog(rootPane, "Debe ingresar un nombre a la Categoria de Productos");
         }
-      
-        else if (new NCategoria().guardar(jtfCategoria.getText())==true) {
+        else if (new NCategoria().NoRep(jtfCategoria.getText())) {
+             
+            if (new NCategoria().guardar(jtfCategoria.getText())==true) {
             
             JOptionPane.showConfirmDialog(rootPane, "Ahora puede registrar productos de la Categoria "+jtfCategoria.getText());
             Recargar();
-        }
-        else{
+              }
+                     else{
             JOptionPane.showConfirmDialog(rootPane, "No se ha podido guardar la categoria "+jtfCategoria.getText());
-        }
-      
+                         }  
+             
+            
+              }
+        else   {
+                 JOptionPane.showConfirmDialog(rootPane, "Ya existe una categoria con este nombre");
+           }
+       
+    
     }//GEN-LAST:event_btnGuardarActionPerformed
      
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
