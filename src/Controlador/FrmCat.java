@@ -234,27 +234,35 @@ public class FrmCat extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
+        
+        NCategoria cate= new NCategoria();
+          
         if (jtfCategoria.getText().isEmpty()) {
-            
-            JOptionPane.showConfirmDialog(rootPane, "Debe ingresar un nombre a la Categoria de Productos");
+               JOptionPane.showConfirmDialog(rootPane, "Debe ingresar un nombre a la Categoria de Productos");
+               
         }
-        else if (new NCategoria().NoRep(jtfCategoria.getText())) {
-             
-            if (new NCategoria().guardar(jtfCategoria.getText())==true) {
-            
-            JOptionPane.showConfirmDialog(rootPane, "Ahora puede registrar productos de la Categoria "+jtfCategoria.getText());
-            Recargar();
-              }
-                     else{
-            JOptionPane.showConfirmDialog(rootPane, "No se ha podido guardar la categoria "+jtfCategoria.getText());
-                         }  
-             
-            
-              }
-        else   {
-                 JOptionPane.showConfirmDialog(rootPane, "Ya existe una categoria con este nombre");
-           }
        
+        else if (cate.NoRep(jtfCategoria.getText())) {
+            
+               if (cate.guardar(jtfCategoria.getText())) {
+                    JOptionPane.showConfirmDialog(rootPane, "Ahora puede registrar productos de la Categoria "+jtfCategoria.getText());
+                  Recargar();
+     
+            }
+               else{
+                   JOptionPane.showConfirmDialog(rootPane, "No se ha podido guardar la categoria "+jtfCategoria.getText());
+               }
+          
+            
+        }
+        else {
+            JOptionPane.showConfirmDialog(rootPane, "Ya existe una categoria con este nombre");
+        }
+        
+                 
+                
+             
     
     }//GEN-LAST:event_btnGuardarActionPerformed
      

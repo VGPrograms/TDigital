@@ -34,13 +34,14 @@ public class NCategoria {
         DCategoria cat = new DCategoria();
         cat.setCategoria(Categoria);
         
-        return new DCategoria().GuardarCategoria(cat);
+        return cat.GuardarCategoria(cat);
     }
        public boolean NoRep(String Categoria)
        {
            DCategoria cat = new DCategoria();
         cat.setCategoria(Categoria);
-           return new DCategoria().NoRep(cat);
+            
+           return cat.NoRep(cat);
        }
     
 }

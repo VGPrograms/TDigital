@@ -55,6 +55,7 @@ public class DCategoria {
     
     //METODOS
      public boolean GuardarCategoria(DCategoria Categoria){
+         
     return S.Insertar("Insert Into Categorias(Categoria) "
             + "Values('"+Categoria.getCategoria()+"');");
     }
@@ -86,7 +87,7 @@ public class DCategoria {
 
     public boolean NoRep(DCategoria Categoria){
         
-          return S.MostrarDinamicamenteMod("Select Id_Categoria as ID, Categoria as Categoria From Categorias where Categoria like '"+Categoria.getCategoria()+"'")==null;
+          return S.MostrarDinamicamenteCom("Select Id_Categoria as ID, Categoria as Categoria From Categorias where Categoria like '"+Categoria.getCategoria()+"'");
     
     }
 }

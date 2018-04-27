@@ -54,9 +54,9 @@ public class SQL {
           //  pst.setString(2, datos.getDescripcion_categoria());
                     
 
-            int N = pst.executeUpdate();
+          
 
-              return N != 0;
+              return pst.executeUpdate()!=0;
         } catch (SQLException e) {
            JOptionPane.showMessageDialog(null, e);
             return false;
@@ -124,6 +124,35 @@ public class SQL {
               return modelo;
               } catch (SQLException ex) {
                return null;
+              }
+                   
+      
+      }
+      public boolean MostrarDinamicamenteCom(String Consulta)
+      {
+          int contador=1;
+                        try {
+               
+                          
+               ResultSet rs = this.getTablaRs(Consulta);
+              
+               ResultSetMetaData rsMd = rs.getMetaData();
+        
+             
+              
+               if (rs.next()) {
+                    rs.close();
+                   
+                                return false;
+                                
+                            }
+                            else{
+                                return true;
+                            }
+   
+         
+              } catch (SQLException ex) {
+               return false;
               }
                    
       
