@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Negocio;
-import Datos.*;
+import Datos.DEmpleado;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -12,4 +12,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class NEmpleado {
    
+    public NEmpleado(){
+    
+    }
+    public DefaultTableModel MostrarEmpleados()
+   {
+       return new DEmpleado().MostrarEmpleados();
+   }
 }

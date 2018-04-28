@@ -201,7 +201,7 @@ menuBar.setOpaque(true);
         JmIUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         JmIUsuarios.setFont(new java.awt.Font("Strawberry Muffins Demo", 0, 16)); // NOI18N
         JmIUsuarios.setForeground(new java.awt.Color(0, 0, 102));
-        JmIUsuarios.setText("Usuarios");
+        JmIUsuarios.setText("Empleados");
         JmIUsuarios.setBorder(null);
         JmIUsuarios.setOpaque(true);
         JmIUsuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -484,7 +484,21 @@ menuBar.setOpaque(true);
     }//GEN-LAST:event_JmIClientesActionPerformed
 
     private void JmIUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmIUsuariosActionPerformed
-      
+      FrmEmpleados Emp = new FrmEmpleados();
+        deskPricipal.add(Emp);
+
+        Emp.setClosable(true);
+        Emp.setIconifiable(true);
+        try {
+            Emp.setMaximum(true);
+        } catch (Exception e) {
+        }
+
+        Emp.toFront();
+        Emp.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(MAXIMIZED_BOTH); 
+        
     }//GEN-LAST:event_JmIUsuariosActionPerformed
 
     private void JmIProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JmIProductosMouseClicked

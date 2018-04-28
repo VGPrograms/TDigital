@@ -18,7 +18,7 @@ public class Conexion {
     public String db = "TDIGITAL";
     public String url = "jdbc:mysql://localhost/" + db;
     public String user = "root";
-    public String pass = "root";
+    public String pass = "Tv32xkhba08";
 
     public Conexion() {
     }
