@@ -14,9 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmEmpleados extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FrmEmpleados
-     */
+   
+    
     public void Acciones(String accion)
     { int fs =jtEmpleados.getSelectedRow();
         boolean op=true;
@@ -101,6 +100,7 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
     }
     public FrmEmpleados() {
         initComponents();
+        jtEmpleados.setModel(new Negocio.NEmpleado().MostrarEmpleados());
         
         
     }
