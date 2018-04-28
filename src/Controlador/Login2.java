@@ -12,6 +12,7 @@ import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 import java.sql.SQLException;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -33,6 +34,7 @@ public class Login2 extends javax.swing.JFrame {
     public Login2(){
         
         initComponents();
+       
         
         ImageIcon img;
         img = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("ImagenesForm/LogoAzul.png")));
