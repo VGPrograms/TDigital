@@ -30,6 +30,7 @@ public class Producto extends javax.swing.JInternalFrame {
     
     public void Acciones(String accion)
     { int fs =jtproductos.getSelectedRow();
+    //
         boolean op=true;
         if ("Editar".equals(accion)) {
             btnGuardar.setVisible(op);
