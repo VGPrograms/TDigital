@@ -43,5 +43,12 @@ public class NCategoria {
             
            return cat.NoRep(cat);
        }
+       public boolean Modificar(int idcat,String Categoria)
+       {
+           DCategoria cat = new DCategoria();
+           cat.setIdCategoria(idcat);
+           cat.setCategoria(Categoria);
+           return cat.ModificarCategoria(cat);
+       }
     
 }
