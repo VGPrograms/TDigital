@@ -5,6 +5,7 @@
  */
 package Negocio;
 import Datos.DEmpleado;
+import Datos.DProducto;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -19,4 +20,9 @@ public class NEmpleado {
    {
        return new DEmpleado().MostrarEmpleados();
    }
+    public DefaultTableModel BusquedaPorX(String Busqueda){
+    DEmpleado Empleado= new DEmpleado();
+       Empleado.setBusqueda(Busqueda);
+       return new DEmpleado().BusquedaPorX(Empleado);
+    }
 }

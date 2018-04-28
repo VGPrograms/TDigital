@@ -467,7 +467,7 @@ menuBar.setOpaque(true);
 
     private void JmIClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmIClientesActionPerformed
        
-        FrmCliente form = new FrmCliente();
+        FrmClientes form = new FrmClientes();
         deskPricipal.add(form);
 
         form.setClosable(true);
@@ -507,7 +507,7 @@ menuBar.setOpaque(true);
 
     private void JmIProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmIProductosActionPerformed
         try {                                             
-            Producto form = new Producto();
+            FrmProductos form = new FrmProductos();
             deskPricipal.add(form);
             
             form.setClosable(true);
@@ -550,7 +550,7 @@ menuBar.setOpaque(true);
           //  FrmCat dial= new FrmCat(rootPane,true);
          
           
-            FrmCat dialog = new FrmCat(new javax.swing.JFrame(), true);
+            FrmCategoria dialog = new FrmCategoria(new javax.swing.JFrame(), true);
             
             
             dialog.setVisible(true);

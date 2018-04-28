@@ -9,12 +9,12 @@ package Controlador;
  *
  * @author JOSIAN
  */
-public class FrmCotizacion extends javax.swing.JInternalFrame {
+public class FrmCotizaciones extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmCotizacion
      */
-    public FrmCotizacion() {
+    public FrmCotizaciones() {
         initComponents();
     }
 

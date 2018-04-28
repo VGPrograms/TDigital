@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  *
  * @author JOSIAN
  */
-public class Producto extends javax.swing.JInternalFrame {
+public class FrmProductos extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Producto
@@ -120,7 +120,7 @@ public class Producto extends javax.swing.JInternalFrame {
         
         
     }
-    public Producto() throws SQLException {
+    public FrmProductos() throws SQLException {
         initComponents();
         Acciones("");
              recargar();
@@ -247,10 +247,10 @@ public class Producto extends javax.swing.JInternalFrame {
         jLabel10.setFont(new java.awt.Font("Futura Bk BT", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("Controlador/Bundle"); // NOI18N
-        jLabel10.setText(bundle.getString("Producto.jLabel10.text")); // NOI18N
+        jLabel10.setText(bundle.getString("FrmProductos.jLabel10.text")); // NOI18N
 
         lblimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/menu/barscode3.png"))); // NOI18N
-        lblimage.setText(bundle.getString("Producto.lblimage.text")); // NOI18N
+        lblimage.setText(bundle.getString("FrmProductos.lblimage.text")); // NOI18N
         lblimage.setName(""); // NOI18N
         lblimage.setPreferredSize(new java.awt.Dimension(50, 50));
         lblimage.setRequestFocusEnabled(false);
@@ -281,12 +281,12 @@ public class Producto extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jtproductos);
 
         jPDatos.setBackground(new java.awt.Color(255, 255, 255));
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("Producto.jPDatos.border.title"))); // NOI18N
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("FrmProductos.jPDatos.border.title"))); // NOI18N
         jPDatos.setAutoscrolls(true);
 
         jLabel21.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel21.setText(bundle.getString("Producto.jLabel21.text")); // NOI18N
+        jLabel21.setText(bundle.getString("FrmProductos.jLabel21.text")); // NOI18N
 
         jtfcodinter.setBackground(new java.awt.Color(255, 255, 255));
         jtfcodinter.setForeground(new java.awt.Color(153, 0, 0));
@@ -299,20 +299,20 @@ public class Producto extends javax.swing.JInternalFrame {
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel18.setText(bundle.getString("Producto.jLabel18.text")); // NOI18N
+        jLabel18.setText(bundle.getString("FrmProductos.jLabel18.text")); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel13.setText(bundle.getString("Producto.jLabel13.text")); // NOI18N
+        jLabel13.setText(bundle.getString("FrmProductos.jLabel13.text")); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 102));
         jLabel12.setLabelFor(jtfprod);
-        jLabel12.setText(bundle.getString("Producto.jLabel12.text")); // NOI18N
+        jLabel12.setText(bundle.getString("FrmProductos.jLabel12.text")); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel16.setText(bundle.getString("Producto.jLabel16.text")); // NOI18N
+        jLabel16.setText(bundle.getString("FrmProductos.jLabel16.text")); // NOI18N
 
         jcbcat.setBackground(new java.awt.Color(255, 255, 255));
         jcbcat.setForeground(new java.awt.Color(0, 0, 0));
@@ -327,28 +327,28 @@ public class Producto extends javax.swing.JInternalFrame {
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel11.setText(bundle.getString("Producto.jLabel11.text")); // NOI18N
+        jLabel11.setText(bundle.getString("FrmProductos.jLabel11.text")); // NOI18N
 
         jtfcod.setBackground(new java.awt.Color(255, 255, 255));
         jtfcod.setForeground(new java.awt.Color(153, 0, 0));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("Producto.jPanel4.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 102))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("FrmProductos.jPanel4.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 102))); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel14.setText(bundle.getString("Producto.jLabel14.text")); // NOI18N
+        jLabel14.setText(bundle.getString("FrmProductos.jLabel14.text")); // NOI18N
 
         jLabel20.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel20.setText(bundle.getString("Producto.jLabel20.text")); // NOI18N
+        jLabel20.setText(bundle.getString("FrmProductos.jLabel20.text")); // NOI18N
 
         jtfpcompra.setBackground(new java.awt.Color(255, 255, 255));
         jtfpcompra.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel17.setText(bundle.getString("Producto.jLabel17.text")); // NOI18N
+        jLabel17.setText(bundle.getString("FrmProductos.jLabel17.text")); // NOI18N
 
         jcbmoneda.setBackground(new java.awt.Color(255, 255, 255));
         jcbmoneda.setForeground(new java.awt.Color(204, 0, 0));
@@ -467,7 +467,7 @@ public class Producto extends javax.swing.JInternalFrame {
 
         jLabel30.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel30.setText(bundle.getString("Producto.jLabel30.text")); // NOI18N
+        jLabel30.setText(bundle.getString("FrmProductos.jLabel30.text")); // NOI18N
 
         jtfdesc.setBackground(new java.awt.Color(255, 255, 255));
         jtfdesc.setForeground(new java.awt.Color(153, 0, 0));
@@ -566,7 +566,7 @@ public class Producto extends javax.swing.JInternalFrame {
 
         jLabel31.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel31.setText(bundle.getString("Producto.jLabel31.text")); // NOI18N
+        jLabel31.setText(bundle.getString("FrmProductos.jLabel31.text")); // NOI18N
 
         jtfBusqueda.setBackground(new java.awt.Color(255, 255, 255));
         jtfBusqueda.setForeground(new java.awt.Color(153, 0, 0));
@@ -642,10 +642,10 @@ public class Producto extends javax.swing.JInternalFrame {
 
         jLabel15.setFont(new java.awt.Font("Futura Bk BT", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText(bundle.getString("Producto.jLabel15.text")); // NOI18N
+        jLabel15.setText(bundle.getString("FrmProductos.jLabel15.text")); // NOI18N
 
         lblimage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/menu/barscode3.png"))); // NOI18N
-        lblimage1.setText(bundle.getString("Producto.lblimage1.text")); // NOI18N
+        lblimage1.setText(bundle.getString("FrmProductos.lblimage1.text")); // NOI18N
         lblimage1.setName(""); // NOI18N
         lblimage1.setPreferredSize(new java.awt.Dimension(50, 50));
         lblimage1.setRequestFocusEnabled(false);
@@ -679,7 +679,7 @@ public class Producto extends javax.swing.JInternalFrame {
 
         jLabel22.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel22.setText(bundle.getString("Producto.jLabel22.text")); // NOI18N
+        jLabel22.setText(bundle.getString("FrmProductos.jLabel22.text")); // NOI18N
 
         jTextField5.setBackground(new java.awt.Color(255, 255, 255));
         jTextField5.setForeground(new java.awt.Color(153, 0, 0));
@@ -692,20 +692,20 @@ public class Producto extends javax.swing.JInternalFrame {
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel19.setText(bundle.getString("Producto.jLabel19.text")); // NOI18N
+        jLabel19.setText(bundle.getString("FrmProductos.jLabel19.text")); // NOI18N
 
         jLabel23.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel23.setText(bundle.getString("Producto.jLabel23.text")); // NOI18N
+        jLabel23.setText(bundle.getString("FrmProductos.jLabel23.text")); // NOI18N
 
         jLabel24.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 102));
         jLabel24.setLabelFor(jtfprod);
-        jLabel24.setText(bundle.getString("Producto.jLabel24.text")); // NOI18N
+        jLabel24.setText(bundle.getString("FrmProductos.jLabel24.text")); // NOI18N
 
         jLabel25.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel25.setText(bundle.getString("Producto.jLabel25.text")); // NOI18N
+        jLabel25.setText(bundle.getString("FrmProductos.jLabel25.text")); // NOI18N
 
         jComboBox5.setBackground(new java.awt.Color(0, 51, 102));
         jComboBox5.setForeground(new java.awt.Color(0, 0, 0));
@@ -715,33 +715,33 @@ public class Producto extends javax.swing.JInternalFrame {
 
         jLabel26.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel26.setText(bundle.getString("Producto.jLabel26.text")); // NOI18N
+        jLabel26.setText(bundle.getString("FrmProductos.jLabel26.text")); // NOI18N
 
         jTextField8.setBackground(new java.awt.Color(255, 255, 255));
         jTextField8.setForeground(new java.awt.Color(153, 0, 0));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("Producto.jPanel6.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 102))); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("FrmProductos.jPanel6.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 102))); // NOI18N
 
         jLabel27.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel27.setText(bundle.getString("Producto.jLabel27.text")); // NOI18N
+        jLabel27.setText(bundle.getString("FrmProductos.jLabel27.text")); // NOI18N
 
         jFormattedTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jFormattedTextField2.setText(bundle.getString("Producto.jFormattedTextField2.text")); // NOI18N
+        jFormattedTextField2.setText(bundle.getString("FrmProductos.jFormattedTextField2.text")); // NOI18N
         jFormattedTextField2.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jLabel28.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel28.setText(bundle.getString("Producto.jLabel28.text")); // NOI18N
+        jLabel28.setText(bundle.getString("FrmProductos.jLabel28.text")); // NOI18N
 
         jFormattedTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jFormattedTextField4.setText(bundle.getString("Producto.jFormattedTextField4.text")); // NOI18N
+        jFormattedTextField4.setText(bundle.getString("FrmProductos.jFormattedTextField4.text")); // NOI18N
         jFormattedTextField4.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jLabel29.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel29.setText(bundle.getString("Producto.jLabel29.text")); // NOI18N
+        jLabel29.setText(bundle.getString("FrmProductos.jLabel29.text")); // NOI18N
 
         jComboBox6.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox6.setForeground(new java.awt.Color(204, 0, 0));
@@ -804,13 +804,13 @@ public class Producto extends javax.swing.JInternalFrame {
         jPbuttons1.add(jButton4);
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setText(bundle.getString("Producto.jButton5.text")); // NOI18N
+        jButton5.setText(bundle.getString("FrmProductos.jButton5.text")); // NOI18N
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.setBorderPainted(false);
         jPbuttons1.add(jButton5);
 
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setText(bundle.getString("Producto.jButton6.text")); // NOI18N
+        jButton6.setText(bundle.getString("FrmProductos.jButton6.text")); // NOI18N
         jButton6.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jButton6.setBorderPainted(false);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -1001,7 +1001,7 @@ public class Producto extends javax.swing.JInternalFrame {
         try {
             recargar();
         } catch (SQLException ex) {
-            Logger.getLogger(Producto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrmProductos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jtfBusquedaKeyReleased
 

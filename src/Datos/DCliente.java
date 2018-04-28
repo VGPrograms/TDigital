@@ -48,9 +48,7 @@ public class DCliente {
     private String _Apellido_M;
     private String _Empresa;
     private String _Celular;
-    private String _CelularAlt;
     private String _Correo;
-    private String _CorreoAlt;
     private String _Busqueda;
     private char _Estado;
 
@@ -103,13 +101,9 @@ public class DCliente {
         this._Celular = _Celular;
     }
 
-    public String getCelularAlt() {
-        return _CelularAlt;
-    }
+   
 
-    public void setCelularAlt(String _CelularAlt) {
-        this._CelularAlt = _CelularAlt;
-    }
+   
 
     public String getCorreo() {
         return _Correo;
@@ -119,13 +113,9 @@ public class DCliente {
         this._Correo = _Correo;
     }
 
-    public String getCorreoAlt() {
-        return _CorreoAlt;
-    }
+    
 
-    public void setCorreoAlt(String _CorreoAlt) {
-        this._CorreoAlt = _CorreoAlt;
-    }
+    
     
     
     //METODOS
@@ -133,8 +123,7 @@ public class DCliente {
       return  S.Insertar("Insert into clientes(Nombre,Apellido_P,Apellido_M,Empresa,Celular,CelularAlt,Correo,CorreoAlt) "
                 + "values ('"+Cliente.getNombre()+"','"+Cliente.getApellido_P()+"',"
                         + "'"+Cliente.getApellido_M()+"','"+Cliente.getEmpresa()+"',"
-                                + "'"+Cliente.getCelular()+"','"+Cliente.getCelularAlt()+"','"+Cliente.getCorreo()+"',"
-                                        + "'"+Cliente.getCorreoAlt()+"')");
+                                + "'"+Cliente.getCelular()+"','"+Cliente.getCorreo()+"'')");
       
        
       
@@ -142,29 +131,28 @@ public class DCliente {
     }
    public DefaultTableModel MostrarClientes(){
      return  S.MostrarDinamicamenteMod("select Id_Cliente as ID, Nombre as Nombre, Apellido_P as 'APellido Paterno',"
-               + " Apellido_M as 'Apellido Materno', Empresa as Empresa, Celular as Celular, CelularAlt as 'Celular Alterno', "
-               + "Correo as Correo, CorreoAlt as 'Correo Alterno' from Clientes;");
+               + " Apellido_M as 'Apellido Materno', Empresa as Empresa, Celular as Celular, "
+               + "Correo as Correo from Clientes;");
      
    }
     public DefaultTableModel BusquedaPorX(DCliente Cliente){
      return  S.MostrarDinamicamenteMod("SELECT Id_Cliente AS ID, Nombre as Nombre, Apellido_P AS 'APellido Paterno', "
-             + "Apellido_M AS 'Apellido Materno', Empresa as Empresa, Celular as Celular, CelularAlt as 'Celular Alterno', Correo as Correo, CorreoAlt as 'Correo Alterno' FROM"
+             + "Apellido_M AS 'Apellido Materno', Empresa as Empresa, Celular as Celular,  Correo as Correo FROM"
              + " Clientes  "
              + "where Nombre like '"+Cliente.getBusqueda()+"%' or Apellido_P like '"+Cliente.getBusqueda()+"%' or Apellido_M like '"+Cliente.getBusqueda()+"%'");
    }
     
     public DefaultTableModel BusquedaPorEstado(DCliente Cliente){
     return S.MostrarDinamicamenteMod("Select Id_Cliente as ID, Nombre as Nombre, Apellido_P as 'Apellido Materno',"
-            + "Apellido_M as 'Apellido Materno', Empresa as Empresa, Celular as Celular, CelularAlt as 'Celular Alterno',"
-            + "Correo as Correo, CorreoAlt as 'Correo Alterno' from Clientes where Estado='1'");
+            + "Apellido_M as 'Apellido Materno', Empresa as Empresa, Celular as Celular,"
+            + "Correo as Correo from Clientes where Estado='1'");
     }
     
     public boolean ModificarCliente(DCliente Cliente){
     return S.Op("update Clientes set Nombre='"+Cliente.getNombre()+"', Apellido_P= '"+Cliente.getApellido_P()
             +"', Apellido_M='"+Cliente.getApellido_M()+"', Empresa='"+Cliente.getEmpresa()+"', "
-                    + "Celular="+Cliente.getCelular()+", CelularAlt="+Cliente.getCelularAlt()+", "
-                            + "Correo='"+Cliente.getCorreo()+"', CorreoAlt='"+Cliente.getCorreoAlt()+"' "
-                                    + "where Id_Cliente="+Cliente.getIdCliente()+";");
+                    + "Celular="+Cliente.getCelular()+",  "
+                            + "Correo='"+Cliente.getCorreo()+"'where Id_Cliente="+Cliente.getIdCliente()+";");
     } 
     
 }

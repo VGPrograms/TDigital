@@ -12,14 +12,14 @@ import javax.swing.event.ListSelectionListener;
  *
  * @author JOSIAN
  */
-public class FrmCat extends javax.swing.JDialog {
+public class FrmCategoria extends javax.swing.JDialog {
 
     /**
      * Creates new form FrmClient
      * @param parent
      * @param modal
      */
-    public FrmCat(java.awt.Frame parent, boolean modal) {
+    public FrmCategoria(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         

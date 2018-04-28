@@ -31,8 +31,6 @@ public class NCliente {
        Cliente.setEmpresa(empresa);
        Cliente.setCelular(celular);
        Cliente.setCorreo(correo);
-       Cliente.setCorreoAlt(CorreoAlt);
-       Cliente.setCelularAlt(celularalt);
       
        return Cliente.GuradarCliente(Cliente);
        

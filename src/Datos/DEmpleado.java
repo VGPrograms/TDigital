@@ -80,14 +80,14 @@ public class DEmpleado {
     /**
      * @return the Celular
      */
-    public int getCelular() {
+    public String getCelular() {
         return Celular;
     }
 
     /**
      * @param Celular the Celular to set
      */
-    public void setCelular(int Celular) {
+    public void setCelular(String Celular) {
         this.Celular = Celular;
     }
 
@@ -137,8 +137,10 @@ public class DEmpleado {
     private String Nombre  ;
     private String Apellido_P  ;
     private String Apellido_M  ;
-    private int Celular  ;
+    private String Celular  ;
+    private String CelularAlt;
     private String Correo  ;
+    private String CorreoAlt;
    private double Sueldo  ;
     private String Pass  ;
     private String _Busqueda;
@@ -165,38 +167,60 @@ public class DEmpleado {
   
     
     public boolean GuardarEmpleado(DEmpleado Empleado){
-    return S.Insertar("Insert into Empleados(Nombre,Apellido_P,Apellido_M,Celular,Correo,Sueldo,Pass) "
+    return S.Insertar("Insert into Empleados(Nombre,Apellido_P,Apellido_M,Celular,CelularAlt,Correo,CorreoAlt,Sueldo,Pass) "
             + "Values('"+Empleado.getNombre()+"','"+Empleado.getApellido_P()+"',"
-                    + "'"+Empleado.getApellido_M()+"','"+Empleado.getCelular()+"',"
-                            + "'"+Empleado.getCorreo()+"',"+Empleado.getSueldo()+",'"+Empleado.getPass()+"');");
+                    + "'"+Empleado.getApellido_M()+"','"+Empleado.getCelular()+"','"+Empleado.getCelularAlt()+"',"
+                            + "'"+Empleado.getCorreo()+"','"+Empleado.getCorreoAlt()+"',"+Empleado.getSueldo()+");");
     }
     
     public DefaultTableModel MostrarEmpleados(){
     return S.MostrarDinamicamenteMod("Select Id_Empleado as ID,Nombre as Nombre,"
             + " Apellido_P as 'Apellido Paterno', Apellido_M as 'Apellido Materno',"
-            + " Celular as Celular, Correo as Correo, Sueldo as Sueldo,"
-            + " Pass as Contraseña from Empleados;");
+            + " Celular as Celular,CelularAlt as 'Celular Alterno', Correo as Correo,CorreoAlt as 'Correo Alterno', Sueldo as Sueldo"
+            + "  from Empleados;");
     }
     
     public DefaultTableModel BusquedaPorX(DEmpleado Empleado){
     return S.MostrarDinamicamenteMod("Select Id_Empleado as ID,Nombre as Nombre,"
             + " Apellido_P as 'Apellido Paterno', Apellido_M as 'Apellido Materno',"
-            + " Celular as Celular, Correo as Correo, Sueldo as Sueldo,"
+            + " Celular as Celular,CelularAlt as 'Celular Alterno', Correo as Correo,CorreoAlt as 'Correo Alterno', Sueldo as Sueldo,"
             + " Pass as Contraseña from Empleados where Nombre like '"+Empleado.getBusqueda()+"%' "
                     + "or Apellido_P like '"+Empleado.getBusqueda()+"%' or Apellido_M like '"+Empleado.getBusqueda()+"%';");
     }
     
-    public DefaultTableModel BusquedaPorEstado(DEmpleado Empleado){
-    return S.MostrarDinamicamenteMod("Select Id_Empleado as ID, Nombre as Nombre,"
-            + "Apellido_P as 'Apellido Paterno',Apellido_M as 'Apellido Materno', Celular as Celular,"
-            + "Correo as Correo, Sueldo as Sueldo,"
-            + "Pass as Contraseña from Empleados where Estado='1'");
-    }
     
     public boolean ModificarEmpleado(DEmpleado Empleado){
     return S.Op("Update Empleados Set Nombre='"+Empleado.getNombre()+"',Apellido_P='"+Empleado.getApellido_P()+"',"
-            + "Apellido_M='"+Empleado.getApellido_M()+"',Celular="+Empleado.getCelular()+",Correo='"+Empleado.getCorreo()+"',"
+            + "Apellido_M='"+Empleado.getApellido_M()+"',Celular="+Empleado.getCelular()+",CelularAlt='"+Empleado.getCelularAlt()+"',Correo='"+Empleado.getCorreo()+"',CorreoAlt='"+Empleado.getCorreoAlt()+"',"
                     + "Sueldo="+Empleado.getSueldo()+",Pass='"+Empleado.getPass()+"' where Id_Empleado="+Empleado.getId_Empleado()+";");
+    }
+
+    /**
+     * @return the CelularAlt
+     */
+    public String getCelularAlt() {
+        return CelularAlt;
+    }
+
+    /**
+     * @param CelularAlt the CelularAlt to set
+     */
+    public void setCelularAlt(String CelularAlt) {
+        this.CelularAlt = CelularAlt;
+    }
+
+    /**
+     * @return the CorreoAlt
+     */
+    public String getCorreoAlt() {
+        return CorreoAlt;
+    }
+
+    /**
+     * @param CorreoAlt the CorreoAlt to set
+     */
+    public void setCorreoAlt(String CorreoAlt) {
+        this.CorreoAlt = CorreoAlt;
     }
     
     
