@@ -5,7 +5,6 @@
  */
 package Negocio;
 import Datos.DCliente;
-import Datos.DEmpleado;
 import javax.swing.table.DefaultTableModel;
 
 /**

@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
 public class FrmEmpleados extends javax.swing.JInternalFrame {
 
    NEmpleado Emp= new NEmpleado();
+   String mov="";
     
     public void Acciones(String accion)
     { int fs =jtEmpleados.getSelectedRow();
@@ -63,6 +64,10 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
         
          
             
+        }
+        else if("Borrar".equals(accion))
+        {
+        
         }
         else {
              btnGuardar.setVisible(!op);
@@ -241,6 +246,11 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
         });
 
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesForm/eliminar.png"))); // NOI18N
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesForm/guardar.png"))); // NOI18N
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -456,16 +466,18 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtfBusquedaKeyReleased
 
     private void btnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnuevoActionPerformed
-Acciones("Nuevo");             
+        mov="Nuevo";
+        Acciones(mov);             
     }//GEN-LAST:event_btnuevoActionPerformed
 
     private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
-Acciones("Editar");        
+        mov="Editar";
+        Acciones(mov);        
 
     }//GEN-LAST:event_btneditarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if("Nuevo".equals("Nuevo"))
+        if("Nuevo".equals(mov))
         {
         NEmpleado emp = new  NEmpleado();
         emp.GuardarEmpleado(Jt_Nombre.getText(),Jt_APaterno.getText(),Jt_AMaterno.getText(),Jt_Celular.getText(),Jt_CelularAlt.getText(),Jt_Correo.getText(),Jt_CorreoAlt.getText());
@@ -475,18 +487,44 @@ Acciones("Editar");
             Logger.getLogger(FrmEmpleados.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
-        else if("Editar".equals("Editar"))
+        else if("Editar".equals(mov))
         {
+            try {
             NEmpleado emp = new  NEmpleado();
             int op=jtEmpleados.getSelectedRow();
            emp.ModificarEmpleado(Integer.parseInt(jtEmpleados.getValueAt(op, 0).toString()),Jt_Nombre.getText(),Jt_APaterno.getText(),Jt_AMaterno.getText(),Jt_Celular.getText(),Jt_CelularAlt.getText(),Jt_Correo.getText(),Jt_CorreoAlt.getText());
-        try {
             recargar();
         } catch (SQLException ex) {
             Logger.getLogger(FrmEmpleados.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
+        else
+        {
+        
+        }
+        mov="";
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+
+     if(JOptionPane.showConfirmDialog(rootPane, "Confirmar", "Borrar Empleado", 2)==0)
+     {
+          try {
+         NEmpleado emp= new NEmpleado();
+         int op=jtEmpleados.getSelectedRow();
+         emp.BorrarEmpleado(Integer.parseInt(jtEmpleados.getValueAt(op, 0).toString()));
+        recargar();
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmEmpleados.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+     else
+     {
+         
+     }
+        
+                
+    }//GEN-LAST:event_btneliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

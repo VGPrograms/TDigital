@@ -177,22 +177,26 @@ public class DEmpleado {
     return S.MostrarDinamicamenteMod("Select Id_Empleado as ID,Nombre as Nombre,"
             + " Apellido_P as 'Apellido Paterno', Apellido_M as 'Apellido Materno',"
             + " Celular as Celular,CelularAlt as 'Celular Alterno', Correo as Correo,CorreoAlt as 'Correo Alterno', Sueldo as Sueldo"
-            + "  from Empleados;");
+            + "  from Empleados where Estado='1';");
     }
     
     public DefaultTableModel BusquedaPorX(DEmpleado Empleado){
     return S.MostrarDinamicamenteMod("Select Id_Empleado as ID,Nombre as Nombre,"
             + " Apellido_P as 'Apellido Paterno', Apellido_M as 'Apellido Materno',"
             + " Celular as Celular,CelularAlt as 'Celular Alterno', Correo as Correo,CorreoAlt as 'Correo Alterno', Sueldo as Sueldo,"
-            + " Pass as Contraseña from Empleados where Nombre like '"+Empleado.getBusqueda()+"%' "
-                    + "or Apellido_P like '"+Empleado.getBusqueda()+"%' or Apellido_M like '"+Empleado.getBusqueda()+"%';");
+            + " Pass as Contraseña from Empleados where (Nombre like '"+Empleado.getBusqueda()+"%' "
+                    + "or Apellido_P like '"+Empleado.getBusqueda()+"%' or Apellido_M like '"+Empleado.getBusqueda()+"%') and (Estado='1');");
     }
     
     
     public boolean ModificarEmpleado(DEmpleado Empleado){
     return S.Op("Update Empleados Set Nombre='"+Empleado.getNombre()+"',Apellido_P='"+Empleado.getApellido_P()+"',"
-            + "Apellido_M='"+Empleado.getApellido_M()+"',Celular="+Empleado.getCelular()+",CelularAlt='"+Empleado.getCelularAlt()+"',Correo='"+Empleado.getCorreo()+"',CorreoAlt='"+Empleado.getCorreoAlt()+"',"
-                    + "Sueldo="+Empleado.getSueldo()+",Pass='"+Empleado.getPass()+"' where Id_Empleado="+Empleado.getId_Empleado()+";");
+            + "Apellido_M='"+Empleado.getApellido_M()+"',Celular='"+Empleado.getCelular()+"',CelularAlt='"+Empleado.getCelularAlt()+"',Correo='"+Empleado.getCorreo()+"',CorreoAlt='"+Empleado.getCorreoAlt()+"',"
+                    + "Sueldo="+Empleado.getSueldo()+" where Id_Empleado="+Empleado.getId_Empleado()+";");
+    }
+    
+    public boolean BorrarEmpleado(DEmpleado Empleado){
+    return S.Op("Update Empleados set Estado='0' where Id_Empleado="+Empleado.getId_Empleado()+"");
     }
 
     /**

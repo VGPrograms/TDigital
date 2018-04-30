@@ -5,7 +5,6 @@
  */
 package Negocio;
 import Datos.DEmpleado;
-import Datos.DProducto;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -39,6 +38,7 @@ public class NEmpleado {
      public boolean ModificarEmpleado(int ID,String Nombre, String A_Paterno, String A_Materno, String Celular, String CelularAlt, String Correo, String CorreAlt )
      {
      DEmpleado Empleado= new DEmpleado();
+     Empleado.setId_Empleado(ID);
      Empleado.setNombre(Nombre);
      Empleado.setApellido_P(A_Paterno);
      Empleado.setApellido_M(A_Materno);
@@ -46,6 +46,12 @@ public class NEmpleado {
      Empleado.setCelularAlt(CelularAlt);
      Empleado.setCorreo(Correo);
      Empleado.setCorreoAlt(CorreAlt);
-     return new DEmpleado().ModificarEmpleado(Empleado);
+     return Empleado.ModificarEmpleado(Empleado);
+     }
+     public boolean BorrarEmpleado(int ID)
+     {
+     DEmpleado Empleado= new DEmpleado();
+     Empleado.setId_Empleado(ID);
+     return Empleado.BorrarEmpleado(Empleado);
      }
 }
