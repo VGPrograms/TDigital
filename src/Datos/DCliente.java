@@ -120,10 +120,10 @@ public class DCliente {
     
     //METODOS
     public boolean GuradarCliente(DCliente Cliente){
-      return  S.Insertar("Insert into clientes(Nombre,Apellido_P,Apellido_M,Empresa,Celular,CelularAlt,Correo,CorreoAlt) "
+      return  S.Insertar("Insert into clientes(Nombre,Apellido_P,Apellido_M,Empresa,Celular,Correo) "
                 + "values ('"+Cliente.getNombre()+"','"+Cliente.getApellido_P()+"',"
                         + "'"+Cliente.getApellido_M()+"','"+Cliente.getEmpresa()+"',"
-                                + "'"+Cliente.getCelular()+"','"+Cliente.getCorreo()+"'')");
+                                + "'"+Cliente.getCelular()+"','"+Cliente.getCorreo()+"')");
       
        
       
@@ -151,8 +151,8 @@ public class DCliente {
     public boolean ModificarCliente(DCliente Cliente){
     return S.Op("update Clientes set Nombre='"+Cliente.getNombre()+"', Apellido_P= '"+Cliente.getApellido_P()
             +"', Apellido_M='"+Cliente.getApellido_M()+"', Empresa='"+Cliente.getEmpresa()+"', "
-                    + "Celular="+Cliente.getCelular()+",  "
-                            + "Correo='"+Cliente.getCorreo()+"'where Id_Cliente="+Cliente.getIdCliente()+";");
+                    + "Celular='"+Cliente.getCelular()+"',  "
+                            + "Correo='"+Cliente.getCorreo()+"' where Id_Cliente="+Cliente.getIdCliente()+";");
     } 
     
 }

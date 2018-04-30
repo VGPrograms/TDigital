@@ -14,10 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-/**
- *
- * @author Juan Carlos Vázquez
- */
+
 public class FrmEmpleados extends javax.swing.JInternalFrame {
 
    NEmpleado Emp= new NEmpleado();
@@ -182,7 +179,7 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
 
         setPreferredSize(new java.awt.Dimension(490, 310));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
 
         Jl_Logo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Jl_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesForm/usuarioA.png"))); // NOI18N
@@ -246,6 +243,11 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesForm/eliminar.png"))); // NOI18N
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesForm/guardar.png"))); // NOI18N
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Correo Alterno");
@@ -388,13 +390,12 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
                     .addComponent(jLabel31)
                     .addComponent(jtfBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jPanel3.getAccessibleContext().setAccessibleName("Datos del Empleado");
         jPanel3.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -417,8 +418,7 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1)
                     .addComponent(Jl_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.getAccessibleContext().setAccessibleName("");
@@ -463,6 +463,30 @@ Acciones("Nuevo");
 Acciones("Editar");        
 
     }//GEN-LAST:event_btneditarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        if("Nuevo".equals("Nuevo"))
+        {
+        NEmpleado emp = new  NEmpleado();
+        emp.GuardarEmpleado(Jt_Nombre.getText(),Jt_APaterno.getText(),Jt_AMaterno.getText(),Jt_Celular.getText(),Jt_CelularAlt.getText(),Jt_Correo.getText(),Jt_CorreoAlt.getText());
+        try {
+            recargar();
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmEmpleados.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        else if("Editar".equals("Editar"))
+        {
+            NEmpleado emp = new  NEmpleado();
+            int op=jtEmpleados.getSelectedRow();
+           emp.ModificarEmpleado(Integer.parseInt(jtEmpleados.getValueAt(op, 0).toString()),Jt_Nombre.getText(),Jt_APaterno.getText(),Jt_AMaterno.getText(),Jt_Celular.getText(),Jt_CelularAlt.getText(),Jt_Correo.getText(),Jt_CorreoAlt.getText());
+        try {
+            recargar();
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmEmpleados.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

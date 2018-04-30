@@ -167,7 +167,7 @@ public class DEmpleado {
   
     
     public boolean GuardarEmpleado(DEmpleado Empleado){
-    return S.Insertar("Insert into Empleados(Nombre,Apellido_P,Apellido_M,Celular,CelularAlt,Correo,CorreoAlt,Sueldo,Pass) "
+    return S.Insertar("Insert into Empleados(Nombre,Apellido_P,Apellido_M,Celular,CelularAlt,Correo,CorreoAlt,Sueldo) "
             + "Values('"+Empleado.getNombre()+"','"+Empleado.getApellido_P()+"',"
                     + "'"+Empleado.getApellido_M()+"','"+Empleado.getCelular()+"','"+Empleado.getCelularAlt()+"',"
                             + "'"+Empleado.getCorreo()+"','"+Empleado.getCorreoAlt()+"',"+Empleado.getSueldo()+");");
