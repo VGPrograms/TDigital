@@ -40,7 +40,7 @@ public class DProducto {
     private double _PrecioDolar;
     private double _DolarActual;
     private String _Moneda;
-    private int _Stock;
+    private double _Stock;
     private int _IdCategoria;
     private int _IdUnidad;
     private String _FechaConversion;
@@ -127,11 +127,11 @@ public class DProducto {
         this._Moneda = _Moneda;
     }
 
-    public int getStock() {
+    public double getStock() {
         return _Stock;
     }
 
-    public void setStock(int _Stock) {
+    public void setStock(double _Stock) {
         this._Stock = _Stock;
     }
 

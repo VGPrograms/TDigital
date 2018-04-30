@@ -74,7 +74,7 @@ menuBar.setOpaque(true);
         menuBar = new javax.swing.JMenuBar();
         jmIVenta = new javax.swing.JMenu();
         jmIVentas = new javax.swing.JMenuItem();
-        jmIVentas1 = new javax.swing.JMenuItem();
+        jlmCotizacion = new javax.swing.JMenuItem();
         MenuPersonal = new javax.swing.JMenu();
         JmIClientes = new javax.swing.JMenuItem();
         JmIUsuarios = new javax.swing.JMenuItem();
@@ -160,18 +160,18 @@ menuBar.setOpaque(true);
         });
         jmIVenta.add(jmIVentas);
 
-        jmIVentas1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
-        jmIVentas1.setBackground(new java.awt.Color(255, 255, 255));
-        jmIVentas1.setFont(new java.awt.Font("Strawberry Muffins Demo", 0, 16)); // NOI18N
-        jmIVentas1.setForeground(new java.awt.Color(0, 0, 102));
-        jmIVentas1.setText("Cotizacion");
-        jmIVentas1.setOpaque(false);
-        jmIVentas1.addActionListener(new java.awt.event.ActionListener() {
+        jlmCotizacion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        jlmCotizacion.setBackground(new java.awt.Color(255, 255, 255));
+        jlmCotizacion.setFont(new java.awt.Font("Strawberry Muffins Demo", 0, 16)); // NOI18N
+        jlmCotizacion.setForeground(new java.awt.Color(0, 0, 102));
+        jlmCotizacion.setText("Cotizacion");
+        jlmCotizacion.setOpaque(false);
+        jlmCotizacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmIVentas1ActionPerformed(evt);
+                jlmCotizacionActionPerformed(evt);
             }
         });
-        jmIVenta.add(jmIVentas1);
+        jmIVenta.add(jlmCotizacion);
 
         menuBar.add(jmIVenta);
 
@@ -652,9 +652,21 @@ menuBar.setOpaque(true);
 
     }//GEN-LAST:event_jMenu5ActionPerformed
 
-    private void jmIVentas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmIVentas1ActionPerformed
+    private void jlmCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlmCotizacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jmIVentas1ActionPerformed
+        FrmCotizaciones form = new FrmCotizaciones();
+        deskPricipal.add(form);
+        form.setClosable(true);
+        form.setIconifiable(true);
+        try {
+            form.setMaximum(true);
+        } catch (PropertyVetoException e) {
+        }
+        form.toFront();
+        form.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(MAXIMIZED_BOTH);
+    }//GEN-LAST:event_jlmCotizacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -711,9 +723,9 @@ menuBar.setOpaque(true);
     private javax.swing.Box.Filler filler1;
     private javax.swing.JMenu jMIAyuda;
     public static javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuItem jlmCotizacion;
     public static javax.swing.JMenu jmIVenta;
     private javax.swing.JMenuItem jmIVentas;
-    private javax.swing.JMenuItem jmIVentas1;
     public static javax.swing.JLabel lblAcceso;
     public static javax.swing.JLabel lblCod_persona;
     public static javax.swing.JLabel lblNombre_persona;
