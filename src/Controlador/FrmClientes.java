@@ -445,16 +445,25 @@ public class FrmClientes extends javax.swing.JInternalFrame {
       
         if("Nuevo".equals(mov))
         {
+            if(Jt_Nombre.getText().length()!=0 && Jt_APaterno.getText().length()!=0 && Jt_AMaterno.getText().length()!=0 && Jt_Empresa.getText().length()!=0 && Jt_Celular.getText().length()!=0 && Jt_Correo.getText().length()!=0)
+            {
         NCliente clie = new  NCliente();
        
        clie.GuardarCliente(Jt_Nombre.getText(),Jt_APaterno.getText(),
                 Jt_AMaterno.getText(),Jt_Empresa.getText(),
                 Jt_Celular.getText(),Jt_Correo.getText());
         try {
+            mov="";
+       Acciones(mov);
             recargar();
         } catch (SQLException ex) {
             Logger.getLogger(FrmEmpleados.class.getName()).log(Level.SEVERE, null, ex);
         }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los campos","ERROR",1);
+            }
         }
         else if("Editar".equals(mov))
         {
@@ -472,8 +481,7 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         {
             
         }
-       mov="";
-       Acciones(mov);
+       
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed

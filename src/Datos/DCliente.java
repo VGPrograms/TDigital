@@ -132,7 +132,7 @@ public class DCliente {
    public DefaultTableModel MostrarClientes(){
      return  S.MostrarDinamicamenteMod("select Id_Cliente as ID, Nombre as Nombre, Apellido_P as 'APellido Paterno',"
                + " Apellido_M as 'Apellido Materno', Empresa as Empresa, Celular as Celular, "
-               + "Correo as Correo from Clientes;");
+               + "Correo as Correo from Clientes where Estado='1';");
      
    }
     public DefaultTableModel BusquedaPorX(DCliente Cliente){
@@ -147,7 +147,7 @@ public class DCliente {
     return S.Op("update Clientes set Nombre='"+Cliente.getNombre()+"', Apellido_P= '"+Cliente.getApellido_P()
             +"', Apellido_M='"+Cliente.getApellido_M()+"', Empresa='"+Cliente.getEmpresa()+"', "
                     + "Celular='"+Cliente.getCelular()+"',  "
-                            + "Correo='"+Cliente.getCorreo()+"' where Id_Cliente="+Cliente.getIdCliente()+";");
+                            + "Correo='"+Cliente.getCorreo()+"' where Id_Cliente="+Cliente.getIdCliente()+" and estado=1;");
     }
     
     public boolean BorrarCliente(DCliente Cliente){
