@@ -5,6 +5,7 @@
  */
 package Controlador;
 import Negocio.NCliente;
+import Negocio.NEmpleado;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -64,7 +65,9 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         }
         else {
              btnGuardar.setVisible(!op);
-            
+              btnuevo.setVisible(op);
+             btneditar.setVisible(op);
+             btneliminar.setVisible(op);
         }
   
     }
@@ -104,6 +107,7 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         initComponents();
         jtClientes.setModel(new Negocio.NCliente().MostrarClientes());
         ocultar_columnas();
+        Acciones("");
     }
      private void recargar() throws SQLException
     {
@@ -228,6 +232,11 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         });
 
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesForm/eliminar.png"))); // NOI18N
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesForm/guardar.png"))); // NOI18N
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -464,7 +473,26 @@ public class FrmClientes extends javax.swing.JInternalFrame {
             
         }
        mov="";
+       Acciones(mov);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+       if(JOptionPane.showConfirmDialog(rootPane, "Confirmar", "Borrar Cliente", 2)==0)
+     {
+          try {
+         NCliente clie= new NCliente();
+         int op=jtClientes.getSelectedRow();
+         clie.BorrarCliente(Integer.parseInt(jtClientes.getValueAt(op, 0).toString()));
+        recargar();
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmClientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+     else
+     {
+         
+     }
+    }//GEN-LAST:event_btneliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

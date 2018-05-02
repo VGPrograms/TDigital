@@ -65,12 +65,11 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
          
             
         }
-        else if("Borrar".equals(accion))
-        {
-        
-        }
         else {
              btnGuardar.setVisible(!op);
+              btnuevo.setVisible(op);
+             btneditar.setVisible(op);
+             btneliminar.setVisible(op);
         }
   
     }
@@ -483,6 +482,7 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
         emp.GuardarEmpleado(Jt_Nombre.getText(),Jt_APaterno.getText(),Jt_AMaterno.getText(),Jt_Celular.getText(),Jt_CelularAlt.getText(),Jt_Correo.getText(),Jt_CorreoAlt.getText());
         try {
             recargar();
+           
         } catch (SQLException ex) {
             Logger.getLogger(FrmEmpleados.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -503,6 +503,7 @@ public class FrmEmpleados extends javax.swing.JInternalFrame {
         
         }
         mov="";
+        Acciones(mov);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed

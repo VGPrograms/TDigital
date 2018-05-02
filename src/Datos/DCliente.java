@@ -139,20 +139,20 @@ public class DCliente {
      return  S.MostrarDinamicamenteMod("SELECT Id_Cliente AS ID, Nombre as Nombre, Apellido_P AS 'APellido Paterno', "
              + "Apellido_M AS 'Apellido Materno', Empresa as Empresa, Celular as Celular,  Correo as Correo FROM"
              + " Clientes  "
-             + "where Nombre like '"+Cliente.getBusqueda()+"%' or Apellido_P like '"+Cliente.getBusqueda()+"%' or Apellido_M like '"+Cliente.getBusqueda()+"%'");
+             + "where (Nombre like '"+Cliente.getBusqueda()+"%' or Apellido_P like '"+Cliente.getBusqueda()+"%' or Apellido_M like '"+Cliente.getBusqueda()+"%') and (Estado='1')");
    }
     
-    public DefaultTableModel BusquedaPorEstado(DCliente Cliente){
-    return S.MostrarDinamicamenteMod("Select Id_Cliente as ID, Nombre as Nombre, Apellido_P as 'Apellido Materno',"
-            + "Apellido_M as 'Apellido Materno', Empresa as Empresa, Celular as Celular,"
-            + "Correo as Correo from Clientes where Estado='1'");
-    }
     
     public boolean ModificarCliente(DCliente Cliente){
     return S.Op("update Clientes set Nombre='"+Cliente.getNombre()+"', Apellido_P= '"+Cliente.getApellido_P()
             +"', Apellido_M='"+Cliente.getApellido_M()+"', Empresa='"+Cliente.getEmpresa()+"', "
                     + "Celular='"+Cliente.getCelular()+"',  "
                             + "Correo='"+Cliente.getCorreo()+"' where Id_Cliente="+Cliente.getIdCliente()+";");
-    } 
+    }
+    
+    public boolean BorrarCliente(DCliente Cliente){
+    return S.Op("Update Clientes set Estado='0' where Id_Cliente="+Cliente.getIdCliente()+"");
+    }
+    
     
 }

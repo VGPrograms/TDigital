@@ -53,6 +53,12 @@ public class NCliente {
      Cliente.setCorreo(Correo);
      return Cliente.ModificarCliente(Cliente);
      }
+   
+   public boolean BorrarCliente(int ID){
+   DCliente Cliente= new DCliente();
+   Cliente.setIdCliente(ID);
+   return Cliente.BorrarCliente(Cliente);
+   }
     
    
 }
